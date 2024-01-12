@@ -1,60 +1,56 @@
-<p align="center">
-    <a href="https://github.com/yiisoft" target="_blank">
-        <img src="https://avatars0.githubusercontent.com/u/993323" height="100px">
-    </a>
-    <h1 align="center">Yii 2 Advanced Project Template</h1>
-    <br>
-</p>
+# Desafio Vaga Fullstack PHP
 
-Yii 2 Advanced Project Template is a skeleton [Yii 2](https://www.yiiframework.com/) application best for
-developing complex Web applications with multiple tiers.
+## Objective
 
-The template includes three tiers: front end, back end, and console, each of which
-is a separate Yii application.
+Create a web application in PHP with restricted access, displaying a list of books with options to view details, edit, delete, and create a book. Additionally, display the current weather of your region.
+**Deadline**: 5 days to complete.
 
-The template is designed to work in a team development environment. It supports
-deploying the application in different environments.
+## Features
 
-Documentation is at [docs/guide/README.md](docs/guide/README.md).
+### 1) Login Screen [WIP]
+- The initial screen should be the login screen.
+- It should not be possible to access other screens without logging in.
 
-[![Latest Stable Version](https://img.shields.io/packagist/v/yiisoft/yii2-app-advanced.svg)](https://packagist.org/packages/yiisoft/yii2-app-advanced)
-[![Total Downloads](https://img.shields.io/packagist/dt/yiisoft/yii2-app-advanced.svg)](https://packagist.org/packages/yiisoft/yii2-app-advanced)
-[![build](https://github.com/yiisoft/yii2-app-advanced/workflows/build/badge.svg)](https://github.com/yiisoft/yii2-app-advanced/actions?query=workflow%3Abuild)
+### 2) Book CRUD [WIP]
+- Book listing with pagination and filtering.
+- Addition and editing of books with the following data:
+  - Title
+  - Description
+  - Author
+  - Number of Pages
+  - Registration Date
+- Book deletion.
 
-DIRECTORY STRUCTURE
--------------------
+### 3) Region Weather [WIP]
+- Integration with an external API to display the weather of a specific region.
+- Show only the current weather.
+- API: [https://hgbrasil.com/status/weather](https://hgbrasil.com/status/weather)
+- Documentation: [https://console.hgbrasil.com/documentation/weather](https://console.hgbrasil.com/documentation/weather)
 
-```
-common
-    config/              contains shared configurations
-    mail/                contains view files for e-mails
-    models/              contains model classes used in both backend and frontend
-    tests/               contains tests for common classes    
-console
-    config/              contains console configurations
-    controllers/         contains console controllers (commands)
-    migrations/          contains database migrations
-    models/              contains console-specific model classes
-    runtime/             contains files generated during runtime
-backend
-    assets/              contains application assets such as JavaScript and CSS
-    config/              contains backend configurations
-    controllers/         contains Web controller classes
-    models/              contains backend-specific model classes
-    runtime/             contains files generated during runtime
-    tests/               contains tests for backend application    
-    views/               contains view files for the Web application
-    web/                 contains the entry script and Web resources
-frontend
-    assets/              contains application assets such as JavaScript and CSS
-    config/              contains frontend configurations
-    controllers/         contains Web controller classes
-    models/              contains frontend-specific model classes
-    runtime/             contains files generated during runtime
-    tests/               contains tests for frontend application
-    views/               contains view files for the Web application
-    web/                 contains the entry script and Web resources
-    widgets/             contains frontend widgets
-vendor/                  contains dependent 3rd-party packages
-environments/            contains environment-based overrides
-```
+## Tools
+
+- PHP 8.1
+- MySQL 8.1
+- Yii Framework 2 and Yii2 Advanced Template
+- Migrations
+- GitHub
+- Angular version 10
+- Responsive Design
+- Docker
+- Unit tests
+
+### Docker Setup
+
+1. Install Docker
+2. Install Docker Compose
+3. Clone this repository
+4. Run `docker-compose up --build`
+5. Initialize the Yii settings: `docker compose exec backend php init `
+6. Run the migrations: `docker compose exec backend yii migrate`
+4. Access the application frontend: [http://localhost:20080](http://localhost:20080)
+5. Access the application backend: [http://localhost:21080](http://localhost:21080)
+
+### Access
+
+- Frontend: [http://localhost:4200](http://localhost:4200)
+- Backend: [http://localhost:8080](http://localhost:8080)
