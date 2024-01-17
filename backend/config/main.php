@@ -15,6 +15,9 @@ return [
     'components' => [
         'request' => [
             'csrfParam' => '_csrf-backend',
+            'parsers' => [
+                'application/json' => \yii\web\JsonParser::class,
+            ]
         ],
         'user' => [
             'identityClass' => 'common\models\User',
@@ -37,14 +40,19 @@ return [
         'errorHandler' => [
             'errorAction' => 'site/error',
         ],
-        /*
         'urlManager' => [
-            'enablePrettyUrl' => true,
-            'showScriptName' => false,
+            'enablePrettyUrl'=>true,
+			'showScriptName' =>false,
             'rules' => [
+                ['class' => 'yii\rest\UrlRule', 'controller' => 'book', 'prefix' => 'api'],
             ],
         ],
-        */
+        'response' => [
+            'on beforeSend' => function ($event) {
+                $response = $event->sender;
+                $response->headers->set('Access-Control-Expose-Headers', 'X-Pagination-Current-Page, X-Pagination-Page-Count, X-Pagination-Per-Page, X-Pagination-Total-Count, Link');
+            },
+        ],
     ],
     'params' => $params,
 ];

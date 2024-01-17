@@ -2,51 +2,48 @@
 
 /** @var yii\web\View $this */
 
-$this->title = 'My Yii Application';
+$this->title = 'Yii2 Angular Demo App';
 ?>
 <div class="site-index">
     <div class="p-5 mb-4 bg-transparent rounded-3">
         <div class="container-fluid py-5 text-center">
-            <h1 class="display-4">Congratulations!</h1>
-            <p class="fs-5 fw-light">You have successfully created your Yii-powered application.</p>
-            <p><a class="btn btn-lg btn-success" href="https://www.yiiframework.com">Get started with Yii</a></p>
+            <h1 class="display-4">Yii Bookstore</h1>
+
+            <section class="d-none d-md-block">
+                <p class="lead">This is a demo application for Yii2 + AngularJS</p>
+                <p class="lead">This application is a simple bookstore where you can create, read, update and delete books.</p>
+                <p class="lead">You can also see the weather forecast for your city.</p>
+                <p class="lead">To see the books, click on the button below.</p>
+            </section>
+
+            <!-- Forecast -->
+            <div class="d-flex justify-content-center">
+                <div class="card bg-light text-dark col-md-6">
+                    <div class="card-body">
+                        <h5 class="card-title"><?= $data['results']['city'] ?></h5>
+                        <div class="d-flex justify-content-center align-items-center">
+                            <div>
+                                <?= \yii\helpers\Html::img("@web/images/{$data['results']['img_id']}.png", ['class' => 'img-fluid']) ?>
+                            </div>
+                            <div>
+                                <p class="card-text"><?= $data['results']['temp'] ?> ºC</p>
+                                <p class="card-text"><?= $data['results']['description'] ?></p>
+                            </div>
+                        </div>
+                        <p class="card-text">Sunrise: <?= $data['results']['sunrise'] ?></p>
+                        <p class="card-text">Sunset: <?= $data['results']['sunset'] ?></p>
+                        <p class="card-text">Wind Speed: <?= $data['results']['wind_speedy'] ?></p>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
     <div class="body-content">
-
-        <div class="row">
-            <div class="col-lg-4">
-                <h2>Heading</h2>
-
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                    ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                    fugiat nulla pariatur.</p>
-
-                <p><a class="btn btn-outline-secondary" href="https://www.yiiframework.com/doc/">Yii Documentation &raquo;</a></p>
-            </div>
-            <div class="col-lg-4">
-                <h2>Heading</h2>
-
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                    ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                    fugiat nulla pariatur.</p>
-
-                <p><a class="btn btn-outline-secondary" href="https://www.yiiframework.com/forum/">Yii Forum &raquo;</a></p>
-            </div>
-            <div class="col-lg-4">
-                <h2>Heading</h2>
-
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                    ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                    fugiat nulla pariatur.</p>
-
-                <p><a class="btn btn-outline-secondary" href="https://www.yiiframework.com/extensions/">Yii Extensions &raquo;</a></p>
+        <div class="p-5 mb-4 bg-transparent rounded-3">
+            <div class="container-fluid py-5 text-center">
+                <a class="btn btn-outline-secondary" href="/books/index">Books</a>
             </div>
         </div>
-
     </div>
 </div>

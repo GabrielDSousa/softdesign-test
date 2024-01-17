@@ -4,8 +4,89 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "2158b2fbf2c2f964ea5d76c3986297c9",
+    "content-hash": "c33160aff8a0dc07214f65001f73ba17",
     "packages": [
+        {
+            "name": "bower-asset/angular",
+            "version": "v1.8.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/angular/bower-angular.git",
+                "reference": "142f3c4bc7d43b6de39581a0d886bbf97f8b62ef"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/angular/bower-angular/zipball/142f3c4bc7d43b6de39581a0d886bbf97f8b62ef",
+                "reference": "142f3c4bc7d43b6de39581a0d886bbf97f8b62ef"
+            },
+            "type": "bower-asset",
+            "license": [
+                "MIT"
+            ]
+        },
+        {
+            "name": "bower-asset/angular-animate",
+            "version": "v1.8.3",
+            "source": {
+                "type": "git",
+                "url": "git@github.com:angular/bower-angular-animate.git",
+                "reference": "aef66379ae252a73f001f30c8eab25d68c30c6bd"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/angular/bower-angular-animate/zipball/aef66379ae252a73f001f30c8eab25d68c30c6bd",
+                "reference": "aef66379ae252a73f001f30c8eab25d68c30c6bd"
+            },
+            "require": {
+                "bower-asset/angular": "1.8.3"
+            },
+            "type": "bower-asset",
+            "license": [
+                "MIT"
+            ]
+        },
+        {
+            "name": "bower-asset/angular-bootstrap",
+            "version": "2.5.0",
+            "source": {
+                "type": "git",
+                "url": "git@github.com:angular-ui/bootstrap-bower.git",
+                "reference": "752d6a79f500391a7efb06d80f37405c920a6f2b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/angular-ui/bootstrap-bower/zipball/752d6a79f500391a7efb06d80f37405c920a6f2b",
+                "reference": "752d6a79f500391a7efb06d80f37405c920a6f2b"
+            },
+            "require": {
+                "bower-asset/angular": ">=1.4.0"
+            },
+            "type": "bower-asset",
+            "license": [
+                "MIT"
+            ]
+        },
+        {
+            "name": "bower-asset/angular-route",
+            "version": "v1.8.3",
+            "source": {
+                "type": "git",
+                "url": "git@github.com:angular/bower-angular-route.git",
+                "reference": "01f39b724c144ffc556bef7f3bca43b1b5662fe7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/angular/bower-angular-route/zipball/01f39b724c144ffc556bef7f3bca43b1b5662fe7",
+                "reference": "01f39b724c144ffc556bef7f3bca43b1b5662fe7"
+            },
+            "require": {
+                "bower-asset/angular": "1.8.3"
+            },
+            "type": "bower-asset",
+            "license": [
+                "MIT"
+            ]
+        },
         {
             "name": "bower-asset/bootstrap",
             "version": "v5.3.1",
@@ -18,6 +99,21 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/twbs/bootstrap/zipball/2a1bf52b73fc9a97f6fef75aa1b29b3e9f0288b3",
                 "reference": "2a1bf52b73fc9a97f6fef75aa1b29b3e9f0288b3"
+            },
+            "type": "bower-asset"
+        },
+        {
+            "name": "bower-asset/fontawesome",
+            "version": "6.3.0",
+            "source": {
+                "type": "git",
+                "url": "git@github.com:FortAwesome/Font-Awesome.git",
+                "reference": "d02961b018153506364077343b0edcde0a39d27e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/FortAwesome/Font-Awesome/zipball/d02961b018153506364077343b0edcde0a39d27e",
+                "reference": "d02961b018153506364077343b0edcde0a39d27e"
             },
             "type": "bower-asset"
         },
@@ -5606,5 +5702,5 @@
         "php": ">=7.4.0"
     },
     "platform-dev": [],
-    "plugin-api-version": "2.3.0"
+    "plugin-api-version": "2.6.0"
 }

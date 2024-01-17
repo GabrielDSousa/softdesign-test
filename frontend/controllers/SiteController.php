@@ -28,7 +28,7 @@ class SiteController extends Controller
         return [
             'access' => [
                 'class' => AccessControl::class,
-                'only' => ['logout', 'signup', 'index'],
+                'only' => ['logout', 'signup', 'index', 'books'],
                 'rules' => [
                     [
                         'actions' => ['signup'],
@@ -36,7 +36,7 @@ class SiteController extends Controller
                         'roles' => ['?'],
                     ],
                     [
-                        'actions' => ['logout', 'index'],
+                        'actions' => ['logout', 'index', 'books'],
                         'allow' => true,
                         'roles' => ['@'],
                     ],
@@ -74,7 +74,21 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
-        return $this->render('index');
+        $apiKey = Yii::$app->params['apiKey'];
+
+        // User ip
+        $request = Yii::$app->request;
+        $userIP = $request->getUserIP();
+
+        if (!empty($userIP)) {
+            $data = $this->hgRequest(['user_ip' => $userIP], $apiKey);
+        } else {
+            $data = $this->hgRequest(['cid' => 'BRXX0198'], $apiKey);
+        }
+
+        return $this->render('index', [
+            'data' => $data
+        ]);
     }
 
     /**
@@ -221,5 +235,36 @@ class SiteController extends Controller
         return $this->render('resendVerificationEmail', [
             'model' => $model
         ]);
+    }
+
+    /**
+     * Função para obter os dados da API
+     *
+     * @param array $params
+     * @param string $key
+     * @param string $endpoint
+     * @return array|bool
+     */
+    public function hgRequest($params, $key = null, $endpoint = 'weather')
+    {
+        $url = 'http://api.hgbrasil.com/' . $endpoint . '/?format=json&';
+
+        if (is_array($params)) {
+            // Inserting the key in the params array
+            if (!empty($key)) $params = array_merge($params, array('key' => $key));
+
+            // Transforming the params array into URL parameters
+            foreach ($params as $key => $value) {
+                if (empty($value)) continue;
+                $url .= $key . '=' . urlencode($value) . '&';
+            }
+
+            // Get API response
+            $response = file_get_contents(substr($url, 0, -1));
+
+            return json_decode($response, true);
+        } else {
+            return false;
+        }
     }
 }
